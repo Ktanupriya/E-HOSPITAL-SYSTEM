@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Hospital System - Your Health, Our Priority</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="import" href="backend/db_connection.php">
+    <link rel="import" href="backend/login.php">
+    <link rel="import" href="backend/register.php">
+
+    <meta name="google-site-verification" content="X5n3jxWPx4FItcdW_Lfc-xTXP722CWc-I7WulSpatvQ" />
+</head>
+
+<body>
+    <header>
+        <h1 class="animatee fade-in">Welcome to e-Hospital</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a type="button" id="logout-button" href="backend/logout.php" style="display: none; max-width: min-content;  background-color: transparent; font-weight: bold;">Logout</a>
+            <a id="login-link" href="login.html" style="display: block; margin-inline: auto;  background-color: transparent; font-weight: bold;">Login</a>
+            <!-- <button id="logoutButton" style="display: none;" onclick="logout()">Logout</button> -->
+        </nav>
+
+
+        <div id="personalized-content" style="display: none;">
+            <h3>Welcome, <span id="username"></span>!</h3>
+            <p style="color: white;">This is your personalized content.</p>
+        </div>
+        <!-- Hamburger Menu -->
+        <div class="hamburger " id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar" style="width: 270px;">
+        <ul class="sidebar-side" id="sidebar-side">
+            <p style="font-size: 25px; margin: 0; text-align: center;">Welcome to E-Hospital</p>
+            <li class="siderbar-li" style="margin-block: 35px; font-size: 1.2rem; position: relative;"><a style="padding: 15px 12px;" href="dashboard/admin-dashboard.html">Admin Dashboard</a></li>
+            <li class="siderbar-li" style="margin-block: 35px; font-size: 1.2rem; position: relative;"><a style="padding: 15px 12px;" href="dashboard/doctor-dashboard.html">Doctor Dashboard</a></li>
+            <li class="siderbar-li" style="margin-block: 35px; font-size: 1.2rem; position: relative;"><a style="padding: 15px 12px;" href="dashboard/patient-dashboard.html">Patient Dashboard</a></li>
+            <li class="siderbar-li" style="margin-block: 35px; font-size: 1.2rem; position: relative;"><a style="padding: 15px 12px;" href="dashboard/lab-dashboard.html">Lab Dashboard</a></li>
+            <li class="siderbar-li" style="margin-block: 35px; font-size: 1.2rem; position: relative;"><a style="padding: 15px 12px;" href="dashboard/pharmacy-dashboard.html">Pharmacy Dashboard</a></li>
+            <li class="siderbar-li" style="margin-block: 35px; font-size: 1.2rem; position: relative;"><a style="padding: 15px 12px;" href="dashboard/billing-dashboard.html">Billing Dashboard</a></li>
+            <a type="button" id="logout-button-sidebar" href="backend/logout.php" style="display: none; margin-inline: auto;  color:white; background-color: transparent; font-weight: bold; text-align: center; text-decoration:none" >Logout</a>
+            <a id="login-button-sidebar" href="login.html" style="display: block; margin-inline: auto; color:white; background-color: transparent; font-weight: bold;">Login</a>
+        </ul>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="animatee fade-in">
+            <div>
+                <h2>Your Health, Our Priority</h2>
+                <p>
+                    e-Hospital is a modern healthcare platform designed to make medical services accessible, efficient,
+                    and reliable. Whether it's scheduling appointments, accessing prescriptions, or managing billing, we
+                    have you covered.
+                </p>
+                <br>
+                <button onclick="location.href='about.html'">Learn More</button>
+            </div>
+        </section>
+
+        <br><br>
+        <!-- Overview Section -->
+        <section class="section-home">
+            <h2>Why Choose e-Hospital?</h2>
+            <div class="animate fade-in">
+                <ul class="sec-ul-home">
+                    <li class="sec-li-home">Convenient online doctor consultations.</li>
+                    <li class="sec-li-home">Seamless appointment scheduling.</li>
+                    <li class="sec-li-home">Access to a wide network of healthcare specialists.</li>
+                    <li class="sec-li-home">Integrated pharmacy and lab services.</li>
+                    <li class="sec-li-home">Transparent and efficient billing processes.</li>
+                </ul>
+            </div>
+        </section>
+
+        <br><br>
+        <!-- Call to Action -->
+        <section>
+            <h2>Get Started Today!</h2>
+            <p>
+                Join thousands of patients who trust e-Hospital for their healthcare needs. Explore our services and
+                experience a smarter way to stay healthy.
+            </p>
+            <br>
+            <!-- <button type="button" id="logout-button" onclick="location.href='login.html'" href="backend/logout.php" style="display: none; margin-inline: auto; font-weight: bold;">Logout</button>
+            <button type="button" id="login-link" onclick="location.href='login.html'" style="display: block; margin-inline: auto; font-weight: bold;">Login Now</button> -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 e-Hospital System. All rights reserved.</p>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/main.js"></script>
+
+
+</body>
+
+</html>

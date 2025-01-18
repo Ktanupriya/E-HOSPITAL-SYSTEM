@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Hospital System - Register</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="animatee fade-in">Welcome to e-Hospital</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+    <br><br>
+
+    <div class="register-container">
+        <form action="backend/register.php" method="POST">
+
+            <h2>Register for E-Hospital</h2>
+            <label for="username">Username:</label><br>
+            <input type="text" class="register-input" id="username" name="username" required><br><br>
+            
+            <label for="email">Email:</label><br>
+            <input type="email" class="register-input" id="email" name="email" required> <br><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" class="register-input" id="password" name="password" required><br><br>
+
+            <label for="role">Role:</label><br>
+            <select id="role" name="role" class="select">
+                <option value="patient">Patient</option>
+                <option value="doctor">Doctor</option>
+                <option value="admin">Admin</option>
+            </select>
+            <br><br>
+
+            <button type="submit" name="submit">Register</button>
+            <p class="register-p">Already have an account? <a href="login.html">Login here</a></p>
+        </form>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

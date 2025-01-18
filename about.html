@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - e-Hospital</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="import" href="backend/db_connection.php">
+    <link rel="import" href="backend/login.php">
+    <link rel="import" href="backend/register.php">
+</head>
+
+<body>
+    <header>
+        <h1>About e-Hospital</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a id="logout-button" href="backend/logout.php" style="display: none; max-width: min-content; background-color: transparent; font-weight: bold;">Logout</a>
+            <a id="login-link" href="login.html" style="display: block; margin-inline: auto;  background-color: transparent; font-weight: bold;">Login</a>
+            <!-- <button id="logoutButton" style="display: none;" onclick="logout()">Logout</button> -->
+        </nav>
+
+        <!-- Hamburger Menu -->
+        <div class="hamburger " id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar" style="width: 270px;" >
+        <ul class="sidebar-side" id="sidebar-side">
+            <p style="font-size: 25px; margin: 0; text-align: center;">Welcome to E-Hospital</p>
+            <li class="siderbar-li" style="margin-block: 35px; font-size: 1.2rem; position: relative;"><a style="padding: 15px 12px;" href="dashboard/admin-dashboard.html">Admin Dashboard</a></li>
+            <li class="siderbar-li" style="margin-block: 35px; font-size: 1.2rem; position: relative;"><a style="padding: 15px 12px;" href="dashboard/doctor-dashboard.html">Doctor Dashboard</a></li>
+            <li class="siderbar-li" style="margin-block: 35px; font-size: 1.2rem; position: relative;"><a style="padding: 15px 12px;" href="dashboard/patient-dashboard.html">Patient Dashboard</a></li>
+            <li class="siderbar-li" style="margin-block: 35px; font-size: 1.2rem; position: relative;"><a style="padding: 15px 12px;" href="dashboard/lab-dashboard.html">Lab Dashboard</a></li>
+            <li class="siderbar-li" style="margin-block: 35px; font-size: 1.2rem; position: relative;"><a style="padding: 15px 12px;" href="dashboard/pharmacy-dashboard.html">Pharmacy Dashboard</a></li>
+            <li class="siderbar-li" style="margin-block: 35px; font-size: 1.2rem; position: relative;"><a style="padding: 15px 12px;" href="dashboard/billing-dashboard.html">Billing Dashboard</a></li>
+            <a type="button" id="logout-button-sidebar" href="backend/logout.php" style="display: none; margin-inline: auto;  color:white; background-color: transparent; font-weight: bold; text-align: center; text-decoration:none" >Logout</a>
+            <a id="login-button-sidebar" href="login.html" style="display: block; margin-inline: auto; color:white; background-color: transparent; font-weight: bold;">Login</a>
+        </ul>
+    </div>
+  
+    <main>
+        <section>
+            <h2>Who We Are</h2>
+            <p>
+                e-Hospital is a cutting-edge digital healthcare solution aimed at bridging the gap between patients and
+                healthcare providers.
+                Our mission is to offer a seamless experience in accessing medical services through technology.
+            </p>
+        </section> <br>
+        <section>
+            <h2>Our Vision</h2>
+            <p>
+                To revolutionize healthcare systems by providing innovative, efficient, and reliable solutions tailored
+                to the needs of all.
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 e-Hospital System. All rights reserved.</p>
+    </footer>
+    <script src="js/dashboard.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

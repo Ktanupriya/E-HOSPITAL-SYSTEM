@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - e-Hospital</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <header>
+        <h1>Login</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+    <main>
+        <section class="login-section">
+            <h2>Access Your Account</h2>
+            <form action="backend/login.php" method="post" id="loginForm">
+                <label for="username" id="loginUsername">Username:</label><br>
+                <input type="text" class="login-input" id="loginUsername" name="username" required><br><br>
+                
+                <label for="password" id="loginPassword">Password:</label><br>
+                <input type="password" class="login-input" id="loginPassword" name="password" required><br><br>
+                
+                <button type="submit" name="submit">Login</button>
+                <p class="login-p">Don't have an account? <a href="register.html">Register here</a></p>
+            </form>
+        </section>
+    </main>
+    
+    <script src="js/dashboard.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

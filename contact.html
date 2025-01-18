@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - e-Hospital</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/login.css"> -->
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="import" href="backend/db_connection.php">
+    <link rel="import" href="backend/login.php">
+    <link rel="import" href="backend/register.php">
+</head>
+
+<body>
+    <header>
+        <h1>Contact Us</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a id="logout-button" href="backend/logout.php" style="display: none; margin-inline: auto; max-width: min-content; background-color: transparent; font-weight: bold;">Logout</a>
+            <a id="login-link" href="login.html" style="display: block; margin-inline: auto;  background-color: transparent; font-weight: bold;">Login</a>
+            <!-- <button id="logoutButton" style="display: none;" onclick="logout()">Logout</button> -->
+        </nav>
+
+        <!-- Hamburger Menu -->
+        <div class="hamburger " id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar" style="width: 270px;">
+        <ul class="sidebar-side" id="sidebar-side">
+            <p style="font-size: 25px; margin: 0; text-align: center;">Welcome to E-Hospital</p>
+            <li class="siderbar-li" style="margin-block: 35px; font-size: 1.2rem; position: relative;"><a style="padding: 15px 12px;" href="dashboard/admin-dashboard.html">Admin Dashboard</a></li>
+            <li class="siderbar-li" style="margin-block: 35px; font-size: 1.2rem; position: relative;"><a style="padding: 15px 12px;" href="dashboard/doctor-dashboard.html">Doctor Dashboard</a></li>
+            <li class="siderbar-li" style="margin-block: 35px; font-size: 1.2rem; position: relative;"><a style="padding: 15px 12px;" href="dashboard/patient-dashboard.html">Patient Dashboard</a></li>
+            <li class="siderbar-li" style="margin-block: 35px; font-size: 1.2rem; position: relative;"><a style="padding: 15px 12px;" href="dashboard/lab-dashboard.html">Lab Dashboard</a></li>
+            <li class="siderbar-li" style="margin-block: 35px; font-size: 1.2rem; position: relative;"><a style="padding: 15px 12px;" href="dashboard/pharmacy-dashboard.html">Pharmacy Dashboard</a></li>
+            <li class="siderbar-li" style="margin-block: 35px; font-size: 1.2rem; position: relative;"><a style="padding: 15px 12px;" href="dashboard/billing-dashboard.html">Billing Dashboard</a></li>
+            <a type="button" id="logout-button-sidebar" href="backend/logout.php" style="display: none; margin-inline: auto;  color:white; background-color: transparent; font-weight: bold; text-align: center; text-decoration:none" >Logout</a>
+            <a id="login-button-sidebar" href="login.html" style="display: block; margin-inline: auto; color:white; background-color: transparent; font-weight: bold;">Login</a>
+        </ul>
+    </div>
+    <main>
+        <section>
+            <h2>Get in Touch</h2>
+            <p>If you have any questions or need assistance, feel free to reach out to us.</p>
+            <form action="#" method="post">
+                <label for="name">Your Name:</label><br>
+                <input type="text" class="contact-input" id="name" name="name" required><br><br>
+
+                <label for="email">Your Email:</label><br>
+                <input type="email" class="contact-input" id="email" name="email" required><br><br>
+
+                <label for="message">Your Message:</label><br>
+                <textarea name="message" id=""></textarea>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 e-Hospital System. All rights reserved.</p>
+    </footer>
+    <script src="js/dashboard.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
