@@ -1,0 +1,147 @@
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+} */
+
+
+/* Main Content */
+main {
+    margin-left: 0; /* No offset by default */
+    transition: margin-left 0.3s ease; /* Smooth adjustment when sidebar opens */
+}
+
+/* Show Sidebar (Push Main Content) */
+.sidebar.active {
+    left: 0;
+}
+
+main.sidebar-open {
+    margin-left: 250px; /* Adjust main content when sidebar is open */
+}
+
+/* Hamburger Menu */
+.hamburger {
+    position: absolute; /* Allows absolute positioning */
+    top: 10px; /* Distance from the top of the page */
+    left: 10px; /* Distance from the left side of the page */
+    display: flex; /* Ensure it is displayed as a flex container */
+    flex-direction: column; /* Stack the lines vertically */
+    cursor: pointer; /* Change cursor to pointer */
+    gap: 5px; /* Spacing between hamburger lines */
+    z-index: 1100; /* Ensures it appears above other elements */
+}
+
+.hamburger span {
+    background-color: white; /* White lines for visibility */
+    height: 3px; /* Thickness of the lines */
+    width: 25px; /* Length of the lines */
+    border-radius: 5px; /* Smooth edges */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.hamburger:hover span {
+    background-color: #ddd; /* Changes color on hover */
+}
+
+/* Sidebar (Initially Hidden) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -320px; /* Hidden by default */
+    width: 250px;
+    height: 100%;
+    background-color: #D4EBF8;
+    color: white;
+    padding: 20px;
+    transition: left 0.3s ease; /* Smooth slide effect */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure it appears above main content */
+    overflow-y: auto;
+}
+
+
+/* For WebKit browsers (Chrome, Safari) */
+.sidebar::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+    height: 2px; /* Height of the scrollbar */
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent; /* Background of the scrollbar track */
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(49, 49, 49, 0.5); /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+    /* height: 12px; */
+}
+
+/* For Firefox */
+.sidebar {
+    scrollbar-width: thin; /* Use a thin scrollbar */
+    scrollbar-color: rgba(71, 71, 71, 0.5) transparent; /* Thumb color and track color */
+}
+
+/* When Sidebar is Active (Push Content) */
+.sidebar.active {
+    left: 0; 
+    padding-top: 66px; /* Adjust padding when sidebar is active */
+}
+
+/* Main Content (Push when Sidebar Opens) */
+main {
+    margin-left: 0; /* Default (No offset) */
+    transition: margin-left 0.3s ease; /* Smooth adjustment */
+}
+
+main.sidebar-open {
+    margin-left: 250px; /* Push main content aside when sidebar opens */
+}
+
+/* Sidebar List Items */
+.sidebar ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0; /* Space between items */
+    font-size: 1.2rem; /* Adjust font size */
+    position: relative; /* Needed for the hover effects */
+}
+
+.sidebar ul li a {
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 15px; /* Padding for spacing */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+}
+
+/* Hover Effect */
+.sidebar ul li a:hover {
+    background-color: #005bb5; /* Change background color on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for hover */
+}
+
+/* Active Link Indicator */
+.sidebar ul li.active a {
+    background-color: #005bb5; /* Highlight active link */
+    font-weight: bold;
+    transform: scale(1.1); /* Slightly larger for active item */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    main.sidebar-open {
+        margin-left: 0; /* No pushing on small screens */
+    }
+}
+
+

@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    background-image: url(../images/doctor-dashboard-img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* background-image: url("../images/main-img.png");
+    background-size: cover;
+    background-position: center; */
+    background: transparent;
+}
+
+main {
+    padding: 20px;
+}
+
+h3 {
+    color: #0073e6;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #ddd;
+    color: white;
+    margin-top: 30px;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        background-image: url(../images/doctor-dashboard-img.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    footer {
+        text-align: center;
+        padding: 1rem;
+        background-color: #ddd;
+        color: white;
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        background-image: url(../images/doctor-dashboard-img.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    footer {
+        text-align: center;
+        padding: 1rem;
+        background-color: #ddd;
+        color: white;
+        margin-top: 30px;
+    }
+}
