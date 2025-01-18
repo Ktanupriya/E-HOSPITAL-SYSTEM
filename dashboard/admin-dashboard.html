@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../about.html">About</a>
+            <a href="../services.html">Services</a>
+            <a href="../contact.html">Contact</a>
+            <!-- <button id="logout-button-admindash" href="backend/logout.php" style="display: none; margin-inline: auto;  background-color: transparent; font-weight: bold;">Logout</button>
+            <a id="login-link-admindash" href="login.html" style="display: block; margin-inline: auto;  background-color: transparent; font-weight: bold;">Login</a> -->
+            <!-- <button id="logoutButton" style="display: none;" onclick="logout()">Logout</button> -->
+        </nav>
+
+        <!-- Hamburger Menu -->
+        <div class="hamburger " id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar" style="width: 270px;">
+        <ul class="sidebar-side" id="sidebar-side">
+            <p style="font-size: 25px; margin: 0; text-align: center;">Welcome to E-Hospital</p>
+            <li class="siderbar-li" style="margin-block: 35px; font-size: 1.2rem; position: relative;"><a style="padding: 15px 12px;" href="admin-dashboard.html">Admin Dashboard</a></li>
+            <li class="siderbar-li" style="margin-block: 35px; font-size: 1.2rem; position: relative;"><a style="padding: 15px 12px;" href="doctor-dashboard.html">Doctor Dashboard</a></li>
+            <li class="siderbar-li" style="margin-block: 35px; font-size: 1.2rem; position: relative;"><a style="padding: 15px 12px;" href="patient-dashboard.html">Patient Dashboard</a></li>
+            <li class="siderbar-li" style="margin-block: 35px; font-size: 1.2rem; position: relative;"><a style="padding: 15px 12px;" href="lab-dashboard.html">Lab Dashboard</a></li>
+            <li class="siderbar-li" style="margin-block: 35px; font-size: 1.2rem; position: relative;"><a style="padding: 15px 12px;" href="pharmacy-dashboard.html">Pharmacy Dashboard</a></li>
+            <li class="siderbar-li" style="margin-block: 35px; font-size: 1.2rem; position: relative;"><a style="padding: 15px 12px;" href="billing-dashboard.html">Billing Dashboard</a></li>
+            <!-- <a type="button" id="logout-button-sidebar" href="backend/logout.php" style="display: none; margin-inline: auto;  color:white; background-color: transparent; font-weight: bold; text-align: center; text-decoration:none" >Logout</a>
+            <a id="login-button-sidebar" href="login.html" style="display: block; margin-inline: auto; color:white; background-color: transparent; font-weight: bold;">Login</a> -->
+        </ul>
+    </div>
+ 
+    <main>
+        <section>
+            <h2>Welcome, Admin</h2>
+            <p>Here you can manage users, view reports, and configure system settings.</p>
+        </section>
+        <div class="stats">
+            <div class="card">Total Users: <span id="user-count">Loading...</span></div>
+            <div class="card">Reports Pending: <span id="report-count">Loading...</span></div>
+        </div>
+    </main>
+    <footer class="dashboard-footer">
+        <p>&copy; 2024 e-Hospital System. All rights reserved.</p>
+    </footer>
+    <script src="../js/script.js"></script>
+    <script src="../js/admin-dashboard.js"></script>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>
