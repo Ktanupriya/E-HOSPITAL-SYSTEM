@@ -1,15 +1,14 @@
 <?php
-include('test_post.php');
-// Database connection
-$host = "localhost";
-$dbUsername = "root"; // Default XAMPP username
-$dbPassword = ""; // Default XAMPP password
-$dbName = "e_hospital";
+session_start();
 
-$conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
+$host = "sql213.infinityfree.com";  // Example from InfinityFree
+$username = "if0_38151079";
+$password = "Ktanu2024";
+$dbname = "if0_38151079_XXX";
+
+$conn = new mysqli($host, $username, $password, $dbname);
 
 if ($conn->connect_error) {
-    error_log("Connection failed: " . $conn->connect_error);
     die("Connection failed: " . $conn->connect_error);
 }
 
