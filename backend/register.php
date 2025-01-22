@@ -14,43 +14,42 @@ if ($conn->connect_error) {
 
 error_log("Handling form submission");
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json");
+header("Access-Control-Allow-Methods: POST");
+
+include('db_connection.php');
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = $_POST['username'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hash password
     $email = $_POST['email'];
-    $role = $_POST['role']; // Ensure this is handled correctly
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+    $role = $_POST['role'];
 
-    error_log("Checking if username already exists: $username");
+    // Check if email already exists
+    $checkUser = "SELECT * FROM users WHERE email = ?";
+    $stmt = $conn->prepare($checkUser);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    $checkStmt = $conn->prepare("SELECT username FROM users WHERE username = ?");
-    $checkStmt->bind_param("s", $username);
-    $checkStmt->execute();
-    $checkStmt->store_result();
-
-    if ($checkStmt->num_rows > 0) {
-        error_log("Username already exists: $username");
-        echo "<script>alert('Username already exists. Please choose a different username.'); window.location.href = '../register.html';</script>";
-        $checkStmt->close();
-        exit();
-    }
-
-    $checkStmt->close();
-
-    error_log("Inserting new user into the database");
-
-    $stmt = $conn->prepare("INSERT INTO users (username, password, role) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $username, $password, $role);
-
-    if ($stmt->execute()) {
-        error_log("Registration successful for user: $username");
-        echo "<script>alert('Registration successful!'); window.location.href = '../login.html';</script>";
+    if ($result->num_rows > 0) {
+        echo json_encode(["status" => "error", "message" => "Email already exists!"]);
     } else {
-        error_log("Error inserting user: " . $stmt->error); // Log the error
-        echo "Error: " . $stmt->error;
-    }
+        // Insert user into database
+        $insertQuery = "INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, ?)";
+        $stmt = $conn->prepare($insertQuery);
+        $stmt->bind_param("ssss", $username, $email, $password, $role);
 
-    $stmt->close();
+        if ($stmt->execute()) {
+            echo json_encode(["status" => "success", "message" => "Registration successful!"]);
+        } else {
+            echo json_encode(["status" => "error", "message" => "Registration failed!"]);
+        }
+    }
+} else {
+    echo json_encode(["status" => "error", "message" => "Invalid request method!"]);
 }
 
-$conn->close();
+
 ?>
