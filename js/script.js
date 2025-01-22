@@ -76,17 +76,24 @@ fetch('https://e-hospital.epizy.com/register.php', {
 
 });
 
+document.getElementById('loginForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent page reload
 
-fetch('https://e-hospital.epizy.com/login.php', {
-    method: 'POST',
-    body: new FormData(document.getElementById('loginForm'))
-})
-.then(response => response.json())
-.then(data => {
-    alert(data.message);
-    if (data.status === "success") {
-        window.location.href = 'index.html';
-    }
+    const formData = new FormData(this);
+
+    fetch('http://ehospital.infinityfreeapp.com/login.php', { // Use InfinityFree backend
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message);
+        if (data.status === "success") {
+            window.location.href = 'index.html'; // Redirect after successful login
+        }
+    })
+    .catch(error => console.error('Error:', error));
+
     
      if (isLoggedIn) {
             document.getElementById('logout-button').style.display = 'block'; // Show logout button
@@ -104,3 +111,4 @@ fetch('https://e-hospital.epizy.com/login.php', {
             document.getElementById('personalized-content').style.display = 'none'; // Hide personalized content
         }
 });
+
