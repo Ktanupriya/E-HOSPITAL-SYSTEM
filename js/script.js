@@ -66,20 +66,24 @@ document.getElementById('registrationForm').addEventListener('submit', function 
 
     const formData = new FormData(this);
 
-    fetch('http://ehospital.infinityfreeapp.com/register.php', { // Use InfinityFree Backend
+    fetch('http://ehospital.infinityfreeapp.com/register.php', { // Use your InfinityFree backend URL
         method: 'POST',
         body: formData
     })
     .then(response => response.json())
     .then(data => {
+        console.log("Server Response:", data); // Debugging: Check if response is received
         alert(data.message);
+
         if (data.status === "success") {
             window.location.href = 'login.html'; // Redirect after registration
         }
     })
-    .catch(error => console.error('Error:', error));
+    .catch(error => {
+        console.error('Error:', error);
+        alert("An error occurred. Please try again.");
+    });
 });
-
 
 
 document.getElementById('loginForm').addEventListener('submit', function (event) {
