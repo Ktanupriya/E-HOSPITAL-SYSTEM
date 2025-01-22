@@ -1,22 +1,8 @@
 <?php
-session_start();
-
-$host = "sql213.infinityfree.com";  // Example from InfinityFree
-$username = "if0_38151079";
-$password = "Ktanu2024";
-$dbname = "if0_38151079_XXX";
-
-$conn = new mysqli($host, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-error_log("Handling form submission");
-
-header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Origin: *"); // Allow all origins
 header("Content-Type: application/json");
 header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Allow-Headers: Content-Type");
 
 include('db_connection.php');
 
@@ -50,6 +36,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 } else {
     echo json_encode(["status" => "error", "message" => "Invalid request method!"]);
 }
-
-
 ?>
