@@ -1,6 +1,4 @@
-# E-HOSPITAL-SYSTEM
-
-# E-Hospital System
+# E-HOSPITAL SYSTEM
 
 ## Overview
 The E-Hospital System is a web application designed to manage hospital operations, including patient registration, appointment scheduling, billing, and more. This project is built using PHP, HTML, CSS, and JavaScript, and it runs on the XAMPP server.
