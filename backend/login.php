@@ -1,17 +1,22 @@
 <?php
 session_start();
 
-$host = "sql213.infinityfree.com";  // Example from InfinityFree
-$username = "if0_38151079";
-$password = "Ktanu2024";
-$dbname = "if0_38151079_XXX";
+// Database connection
+$host = "localhost";
+$dbUsername = "root"; // Default XAMPP username
+$dbPassword = ""; // Default XAMPP password
+$dbName = "e_hospital";
+// $host = "sql213.infinityfree.com";  
+// $username = "if0_38151079";
+// $password = "Ktanu2024";
+// $dbname = "if0_38151079_XXX";
 
-$conn = new mysqli($host, $username, $password, $dbname);
+$conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
+// $conn = new mysqli($host, $username, $password, $dbname);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
 
 // Handle form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
