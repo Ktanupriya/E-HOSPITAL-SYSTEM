@@ -38,26 +38,6 @@ The following tables should be created in the `e_hospital` database:
    - `email` VARCHAR(100) NOT NULL
    - `role` ENUM('patient', 'doctor', 'admin') NOT NULL
 
-2. **appointments**
-   - `appointment_id` INT AUTO_INCREMENT PRIMARY KEY
-   - `patient_id` INT NOT NULL
-   - `doctor_id` INT NOT NULL
-   - `appointment_date` DATETIME NOT NULL
-   - `status` ENUM('scheduled', 'completed', 'canceled') NOT NULL
-
-3. **billing**
-   - `billing_id` INT AUTO_INCREMENT PRIMARY KEY
-   - `patient_id` INT NOT NULL
-   - `amount` DECIMAL(10, 2) NOT NULL
-   - `billing_date` DATETIME NOT NULL
-   - `status` ENUM('paid', 'unpaid') NOT NULL
-
-4. **prescriptions**
-   - `prescription_id` INT AUTO_INCREMENT PRIMARY KEY
-   - `patient_id` INT NOT NULL
-   - `doctor_id` INT NOT NULL
-   - `medication` TEXT NOT NULL
-   - `date_issued` DATETIME NOT NULL
 
 ## How the Project Works
 - The application consists of several pages, including:
